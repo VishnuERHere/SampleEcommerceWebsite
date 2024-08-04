@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/SampleEcommerceWebsite/Migrations
+/SEW_Razor/SEW_Razor.csproj
+/SEW_Razor
