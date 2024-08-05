@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SampleEcommerceWebsite.DataAccess.Repository.IRepository;
 using SampleEcommerceWebsite.Models;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace SampleEcommerceWebsite.Areas.Customer.Controllers
 {
@@ -27,9 +29,47 @@ namespace SampleEcommerceWebsite.Areas.Customer.Controllers
 
         public IActionResult Details(int productId)
         {
-            Product product = _unitOfWork.Product.Get(u=>u.Id==productId,includeProperties: "Category");
-            return View(product);
+
+            ShoppingCart shoppingCart = new()
+            {
+                Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category"),
+                Count = 1,
+                ProductId = productId
+            };
+            return View(shoppingCart);
         }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Details(ShoppingCart shoppingCart)
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+            shoppingCart.ApplicationUserId = userId;
+
+            //maintain existing cart information
+            ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u=>u.ApplicationUserId == userId && 
+            u.ProductId==shoppingCart.ProductId);
+
+            if(cartFromDb != null)
+            {
+                //shopping cart exists
+                cartFromDb.Count += shoppingCart.Count;
+                _unitOfWork.ShoppingCart.Update(cartFromDb);
+
+            }
+            else
+            {
+                //shopping cart do not exist
+                _unitOfWork.ShoppingCart.Add(shoppingCart);
+            }
+            TempData["success"] = "Your cart has been updated!";
+
+            _unitOfWork.Save();
+            
+            return RedirectToAction(nameof(Index));
+        }
+
 
         public IActionResult Privacy()
         {

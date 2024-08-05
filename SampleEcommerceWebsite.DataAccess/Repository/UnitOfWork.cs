@@ -17,6 +17,9 @@ namespace SampleEcommerceWebsite.DataAccess.Repository
         public IProductRepository Product { get; private set; }
         //Adding New Model step 5 - updating IUnitOfWork
         public ICompanyRepository Company { get; private set; }
+        public IShoppingCartRepository ShoppingCart { get; private set; }
+        public IApplicationUserRepository ApplicationUser { get; private set; }
+
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
@@ -24,6 +27,7 @@ namespace SampleEcommerceWebsite.DataAccess.Repository
             Product = new ProductRepository(_db);
             //Adding New Model step 5 - initialize Company
             Company = new CompanyRepository(_db);
+            ShoppingCart = new ShoppingCartRepository(_db);
         }
         
 
