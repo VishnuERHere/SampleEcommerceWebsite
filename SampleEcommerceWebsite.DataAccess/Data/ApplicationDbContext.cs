@@ -15,6 +15,8 @@ namespace SampleEcommerceWebsite.DataAccess.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        //Adding New Model step 2 + migrations
+        public DbSet<Company> Companies { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //included with IdentityDbContext
@@ -27,6 +29,38 @@ namespace SampleEcommerceWebsite.DataAccess.Data
                 new Category { CategoryId = 4, Name = "Winter Sports", DisplayOrder = 4 },
                 new Category { CategoryId = 5, Name = "Racquet Sports", DisplayOrder = 5 }
                 );
+
+            //Adding New Model step 8 - Seeding Values
+            modelBuilder.Entity<Company>().HasData(
+                new Company { Id = 1, 
+                    Name = "Sports Retailers Ltd", 
+                    StreetAddress="11 North York Road",
+                    City="Toronto",
+                    State="Ontario",
+                    PhoneNumber="7894561230",
+                    PostalCode="L1L 1L1"
+                },
+                new Company
+                {
+                    Id = 2,
+                    Name = "ABC Sports",
+                    StreetAddress = "21 North York Road",
+                    City = "Toronto",
+                    State = "Ontario",
+                    PhoneNumber = "7894561231",
+                    PostalCode = "L1L 1L1"
+                }, new Company
+                {
+                    Id = 3,
+                    Name = "A2Z Sports",
+                    StreetAddress = "31 North York Road",
+                    City = "Toronto",
+                    State = "Ontario",
+                    PhoneNumber = "7894561232",
+                    PostalCode = "L1L 1L1"
+                }
+            );
+
 
             modelBuilder.Entity<Product>().HasData(
                 new Product

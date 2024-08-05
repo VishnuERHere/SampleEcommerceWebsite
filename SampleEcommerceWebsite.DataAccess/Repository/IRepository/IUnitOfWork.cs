@@ -11,6 +11,8 @@ namespace SampleEcommerceWebsite.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
 
         IProductRepository Product { get; }
+        //Adding New Model step 5 - updating IUnitOfWork
+        ICompanyRepository Company { get; }
 
         void Save();
     }
