@@ -12,7 +12,7 @@ This E-Commerce website is aimed to provide a seamless shopping experience for s
 
 ****Admin**** :
 - Can add, edit, and delete products.
-- Can manage categories and subcategories.
+- Can manage product categories.
 - Has access to all administrative features.
 
 ****Customers**** :
