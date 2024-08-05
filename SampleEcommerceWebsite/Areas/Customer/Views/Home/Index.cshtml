@@ -19,7 +19,9 @@
                                     <p class="text-dark opacity-75 text-center">As low as: $<span>@product.Price100</span></p>
 
                                 </svg>
-                                <a href="" class="btn btn-outline-primary bg-gradient border-0 form-control">
+                                <a asp-action="Details"
+                                asp-route-productId="@product.Id"
+                                class="btn btn-outline-primary bg-gradient border-0 form-control">
                                     <i class="bi bi-info-circle"></i>
                                     </a>
                                 </div>
