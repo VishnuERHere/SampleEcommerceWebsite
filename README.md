@@ -1,7 +1,43 @@
 --------------------------------Sample E-Commerce Website----------------
 -------------------------------------------------------------------------
 
-This is a work in progress for an E-Commerce web application developed using ASP.NET Core MVC, as part of my self-learning journey in .NET Core and latest trends in .Net Development, following an online tutorials. 
+-------------------------------------------------------------------------
+About the application
+-------------------------------------------------------------------------
+**Overview**
+
+This E-Commerce website is aimed to provide a seamless shopping experience for sports enthusiasts. Users can browse, search, and purchase various sports goods. The platform supports multiple user roles, each with specific permissions and functionalities. It is a work in progress, and is being developed using ASP.NET Core MVC, as part of my self-learning journey to improve my hands on experience with the latest trends in .Net Development, following online tutorials and other sources. 
+
+**User Roles**
+
+****Admin**** :
+- Can add, edit, and delete products.
+- Can manage categories and subcategories.
+- Has access to all administrative features.
+
+****Customers**** :
+- End users who can browse and purchase products.
+- Can create and manage their accounts.
+
+****Employees (To Be Implemented)****
+- Assist admins with limited access.
+- Can manage orders and customer inquiries.
+
+****Companies (To Be Implemented)****
+Can add new products under their brand.
+Manage their product listings and inventory.
+
+**Features** 
+
+Product Management: Admins can add, edit, and delete products and categories.
+
+User Authentication: Secure login and registration for all user roles.
+
+Shopping Cart: Customers can add products to their cart and proceed to checkout.
+
+Order Management: Customers can view their order history and track orders.
+
+Responsive Design: Optimized for both desktop and mobile devices.
 
 -------------------------------------------------------------------------
 Project Highlights
