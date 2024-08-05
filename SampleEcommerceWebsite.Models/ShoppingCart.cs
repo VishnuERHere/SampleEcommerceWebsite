@@ -11,7 +11,7 @@ namespace SampleEcommerceWebsite.Models
 {
     public class ShoppingCart
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         [ForeignKey("ProductId")]
         [ValidateNever]
         public Product Product { get; set; }
@@ -22,5 +22,8 @@ namespace SampleEcommerceWebsite.Models
         [ForeignKey("ApplicationUserId")]
         [ValidateNever]
         public ApplicationUser  ApplicationUser { get; set; }
+
+        [NotMapped]
+        public double Price { get; set; }
     }
 }
