@@ -20,12 +20,12 @@ This E-Commerce website is aimed to provide a seamless shopping experience for s
 - Can create and manage their accounts.
 
 ****Employees (To Be Implemented)****
-- Assist admins with limited access.
+- Assist admins with operational tasks, but having limited access.
 - Can manage orders and customer inquiries.
 
 ****Companies (To Be Implemented)****
-Can add new products under their brand.
-Manage their product listings and inventory.
+- Customers representing an organization/group.
+- May have special privileges such as ordering items in bulk quantities.
 
 **Features** 
 
