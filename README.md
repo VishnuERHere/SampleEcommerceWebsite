@@ -1,9 +1,9 @@
---------------------------------Sample E-Commerce Website----------------
--------------------------------------------------------------------------
+----------------Sample E-Commerce Website-------------
+------------------------------------------------------
 
--------------------------------------------------------------------------
+------------------------------------------------------
 About the application
--------------------------------------------------------------------------
+------------------------------------------------------
 **Overview**
 
 This E-Commerce website is aimed to provide a seamless shopping experience for sports enthusiasts. Users can browse, search, and purchase various sports goods. The platform supports multiple user roles, each with specific permissions and functionalities. It is a work in progress, and is being developed using ASP.NET Core MVC, as part of my self-learning journey to improve my hands on experience with the latest trends in .Net Development, following online tutorials and other sources. 
@@ -39,9 +39,9 @@ Order Management: Customers can view their order history and track orders.
 
 Responsive Design: Optimized for both desktop and mobile devices.
 
--------------------------------------------------------------------------
+------------------------------------------------------
 Project Highlights
--------------------------------------------------------------------------
+------------------------------------------------------
 
 - Use ASP.NET Core Structure tom implement and practice fundamentals of ASP.NET Core MVC projects.
 
@@ -51,9 +51,9 @@ Project Highlights
 
 - Automate database migrations and seeding.
 
--------------------------------------------------------------------------
+------------------------------------------------------
 Technologies Used:
--------------------------------------------------------------------------
+------------------------------------------------------
 
 - ASP.NET Core MVC (7.0)
 - Entity Framework Core
