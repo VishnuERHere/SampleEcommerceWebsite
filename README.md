@@ -2,14 +2,17 @@
 ------------------------------------------------------
 
 ------------------------------------------------------
-About the application
+  About the application
 ------------------------------------------------------
-**Overview**
+
+******Overview******
 
 This E-Commerce website is aimed to provide a seamless shopping experience for sports enthusiasts. Users can browse, search, and purchase various sports goods. The platform supports multiple user roles, each with specific permissions and functionalities. It is a work in progress, and is being developed using ASP.NET Core MVC, as part of my self-learning journey to improve my hands on experience with the latest trends in .Net Development, following online tutorials and other sources. 
 
 **User Roles**
+- Chosen during the time of registration, as per the current implementation(updated logic will be implemented in future).
 
+  
 ****Admin**** :
 - Can add, edit, and delete products.
 - Can manage product categories.
@@ -17,15 +20,20 @@ This E-Commerce website is aimed to provide a seamless shopping experience for s
 
 ****Customers**** :
 - End users who can browse and purchase products.
+- Need to make payment immediately to complete their orders.
 - Can create and manage their accounts.
+  
+
+****Companies**** 
+- Customers representing an organization/group.
+- Can delay payment.
+- May have special privileges such as ordering items in bulk quantities.
+
 
 ****Employees (To Be Implemented)****
 - Assist admins with operational tasks, but having limited access.
 - Can manage orders and customer inquiries.
 
-****Companies (To Be Implemented)****
-- Customers representing an organization/group.
-- May have special privileges such as ordering items in bulk quantities.
 
 **Features** 
 
@@ -50,6 +58,8 @@ Project Highlights
 - Utilize Advanced ASP.NET Core Features such as custom tag helpers, view components, partial views, and sessions.
 
 - Automate database migrations and seeding.
+  
+- Integrate payment using Stripe
 
 ------------------------------------------------------
 Technologies Used:
@@ -60,5 +70,10 @@ Technologies Used:
 - SQL Server
 - Identity Framework
 - Razor Pages
+- Stripe Payment Integration
 - Bootstrap v5
 
+
+
+
+****More features and enhancements will be implemented soon.****
