@@ -18,6 +18,9 @@ namespace SampleEcommerceWebsite.DataAccess.Data
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         //Adding New Model step 2 + migrations
         public DbSet<Company> Companies { get; set; }
+
+        public DbSet<OrderHeader> OrderHeaders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //included with IdentityDbContext
