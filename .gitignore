@@ -366,3 +366,4 @@ FodyWeavers.xsd
 /SEW_Razor
 /SampleEcommerceWebsite.DataAccess/Migrations
 /SampleEcommerceWebsite/wwwroot/images/product
+/SampleEcommerceWebsite/appsettings.json
