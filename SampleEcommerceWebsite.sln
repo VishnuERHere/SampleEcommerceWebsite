@@ -5,13 +5,18 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleEcommerceWebsite", "SampleEcommerceWebsite\SampleEcommerceWebsite.csproj", "{485F958C-C2BB-410D-90F1-1A6245577A61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEW_Razor", "SEW_Razor\SEW_Razor.csproj", "{081D1153-9B42-409D-A550-08D0EA6FBF84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEW_Razor", "SEW_Razor\SEW_Razor.csproj", "{081D1153-9B42-409D-A550-08D0EA6FBF84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEcommerceWebsite.DataAccess", "SampleEcommerceWebsite.DataAccess\SampleEcommerceWebsite.DataAccess.csproj", "{7E8C77FD-33E3-46DE-A19B-4D951E08F05A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleEcommerceWebsite.DataAccess", "SampleEcommerceWebsite.DataAccess\SampleEcommerceWebsite.DataAccess.csproj", "{7E8C77FD-33E3-46DE-A19B-4D951E08F05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEcommerceWebsite.Models", "SampleEcommerceWebsite.Models\SampleEcommerceWebsite.Models.csproj", "{6CA9204D-EF57-4E4D-8604-D2C7DF9548F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleEcommerceWebsite.Models", "SampleEcommerceWebsite.Models\SampleEcommerceWebsite.Models.csproj", "{6CA9204D-EF57-4E4D-8604-D2C7DF9548F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEcommerceWebsite.Utility", "SampleEcommerceWebsite.Utility\SampleEcommerceWebsite.Utility.csproj", "{3BBDD24C-9153-48DF-9D51-2247C89BA470}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleEcommerceWebsite.Utility", "SampleEcommerceWebsite.Utility\SampleEcommerceWebsite.Utility.csproj", "{3BBDD24C-9153-48DF-9D51-2247C89BA470}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{488A3F53-9432-492C-945C-9B6CA03BC6BF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
