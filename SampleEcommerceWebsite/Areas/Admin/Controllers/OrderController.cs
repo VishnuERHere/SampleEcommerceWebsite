@@ -12,7 +12,7 @@ using Stripe.Checkout;
 using System.Diagnostics;
 using System.Security.Claims;
 
-namespace BulkyBookWeb.Areas.Admin.Controllers
+namespace SampleEcommerceWebsite.Areas.Admin.Controllers
 {
     [Area("admin")]
     [Authorize]

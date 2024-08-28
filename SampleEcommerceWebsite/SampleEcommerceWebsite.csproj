@@ -19,6 +19,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
+    <PackageReference Include="MySql.Data" Version="6.10.9" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
     <PackageReference Include="Stripe.net" Version="41.9.0" />
     <PackageReference Include="System.Text.Encodings.Web" Version="8.0.0-preview.1.23110.8" />
   </ItemGroup>
