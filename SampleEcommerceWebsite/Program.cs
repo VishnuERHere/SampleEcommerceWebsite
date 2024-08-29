@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using SampleEcommerceWebsite.Utility;
 using Stripe;
 using SampleEcommerceWebsite.DataAccess.DbInitializer;
-using BulkyBook.DataAccess.DbInitializer;
 
 var builder = WebApplication.CreateBuilder(args);
 

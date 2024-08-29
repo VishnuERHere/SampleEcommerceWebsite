@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BulkyBook.DataAccess.DbInitializer
+namespace SampleEcommerceWebsite.DataAccess.DbInitializer
 {
     public class DbInitializer : IDbInitializer
     {
