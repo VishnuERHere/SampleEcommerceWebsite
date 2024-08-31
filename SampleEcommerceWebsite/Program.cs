@@ -16,8 +16,9 @@ builder.Services.AddControllersWithViews();
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-    new MySqlServerVersion(new Version(8, 0, 11))));
+    options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
+    new MySqlServerVersion(new Version(8, 0, 38)),
+        mySqlOptions => mySqlOptions.EnableRetryOnFailure()));
 
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 
@@ -67,7 +68,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
-//SeedDatabase();
+SeedDatabase();
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
