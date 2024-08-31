@@ -7,6 +7,7 @@ using SampleEcommerceWebsite.DataAccess.Repository.IRepository;
 using SampleEcommerceWebsite.Models;
 using SampleEcommerceWebsite.Models.ViewModels;
 using SampleEcommerceWebsite.Utility;
+using System.Text.RegularExpressions;
 
 namespace SampleEcommerceWebsite.Areas.Admin.Controllers
 {
@@ -67,6 +68,7 @@ namespace SampleEcommerceWebsite.Areas.Admin.Controllers
             {
                 //Update when ID is present
                 productViewModel.Product = _unitOfWork.Product.Get(u=>u.Id == id);
+                productViewModel.Product.Description = Regex.Replace(productViewModel.Product.Description, @"<p>|</p>", string.Empty);
                 return View(productViewModel);
             }
 
@@ -75,24 +77,28 @@ namespace SampleEcommerceWebsite.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Upsert(ProductViewModel productViewModel, IFormFile? file)
         {
-
-
-            //Inserting data to the table if there are no validation errors
+            // Inserting data to the table if there are no validation errors
             if (ModelState.IsValid)
             {
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
                 if (file != null)
                 {
-                    //Assigning random Guid and extension as filename
+                    // Assigning random Guid and extension as filename
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string productPath = Path.Combine(wwwRootPath, @"images\product");
-                    //updating image file
-                    if(!string.IsNullOrEmpty(productViewModel.Product.ImageUrl))
+                    string productPath = Path.Combine(wwwRootPath, "images", "product");
+
+                    // Ensure the directory exists
+                    if (!Directory.Exists(productPath))
                     {
-                        //delete old image
-                        var oldImagePath = 
-                            Path.Combine(wwwRootPath, productViewModel.Product.ImageUrl.TrimStart('\\'));
-                        if(System.IO.File.Exists(oldImagePath))
+                        Directory.CreateDirectory(productPath);
+                    }
+
+                    // Updating image file
+                    if (!string.IsNullOrEmpty(productViewModel.Product.ImageUrl))
+                    {
+                        // Delete old image
+                        var oldImagePath = Path.Combine(wwwRootPath, productViewModel.Product.ImageUrl.TrimStart('/'));
+                        if (System.IO.File.Exists(oldImagePath))
                         {
                             System.IO.File.Delete(oldImagePath);
                         }
@@ -103,14 +109,12 @@ namespace SampleEcommerceWebsite.Areas.Admin.Controllers
                         file.CopyTo(fileStream);
                     }
 
-                    productViewModel.Product.ImageUrl = @"\images\product\" +fileName;
-                
-                }
+                    productViewModel.Product.ImageUrl = "/images/product/" + fileName;
+                    }
 
-                if(productViewModel.Product.Id == 0) 
+                if (productViewModel.Product.Id == 0)
                 {
                     _unitOfWork.Product.Add(productViewModel.Product);
-
                 }
                 else
                 {
@@ -119,20 +123,19 @@ namespace SampleEcommerceWebsite.Areas.Admin.Controllers
                 _unitOfWork.Save();
                 TempData["success"] = "Product created successfully!";
                 return RedirectToAction("Index");
-
             }
             else
             {
                 productViewModel.CategoryList = _unitOfWork.Category
-                .GetAll().Select(u => new SelectListItem
-                {
-                    Text = u.Name,
-                    Value = u.CategoryId.ToString()
-                });
+                    .GetAll().Select(u => new SelectListItem
+                    {
+                        Text = u.Name,
+                        Value = u.CategoryId.ToString()
+                    });
                 return View(productViewModel);
             }
-            
         }
+
 
         //public IActionResult Edit(int? id)
         //{
